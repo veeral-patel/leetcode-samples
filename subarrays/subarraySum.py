@@ -16,6 +16,8 @@ def subarraySum(arr, target):
             return [0, j+1]
 
     # Check for other subarrays
+    # Note that this is O(N^2) TC. Use a hashmap (like 2SUM)
+    # to get to O(N)
     for j in range(len(prefixSums)):
         for i in range(j):
             if prefixSums[j]-prefixSums[i] == target:

@@ -12,6 +12,9 @@ A = 0
 B = 3
 """
 
+# Common mistakes
+# - Not storing, checking or inserting into seen List
+# - Doing pop() instead of pop(0)
 def shortest_path(graph: List[List[int]], a: int, b: int) -> int:
     queue = [(0, a)]
     seen = set()
@@ -23,6 +26,7 @@ def shortest_path(graph: List[List[int]], a: int, b: int) -> int:
             return dist
         
         if nxt not in seen:
+            seen.add(nxt)
             for neighbor in graph[nxt]:
                 queue.append((dist+1, neighbor))
                 

@@ -12,6 +12,8 @@ def get_neighbors(matrix, i, j):
 
     return neighbors
 
+# This is not correct; it does not update neighbors 
+# of neighbors of the target which have the same color
 def flood_fill(r, c, replacement, image):
     val = image[r][c]
     image[r][c] = replacement
